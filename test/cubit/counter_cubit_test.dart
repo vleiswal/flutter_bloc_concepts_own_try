@@ -1,5 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:flutter_bloc_concepts_own_try/cubit/counter_cubit.dart';
+import 'package:flutter_bloc_concepts_own_try/logic/cubit/counter_cubit.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -19,7 +19,9 @@ void main() {
     });
 
     blocTest(
-      "the cubit should emit a CounterState(counterValue:1, wasIncremented:true) when cubit.increment() function is called",
+      '''
+the cubit should emit a CounterState(counterValue:1, wasIncremented:true)
+ when cubit.increment() function is called''',
       build: () => counterCubit,
       act: (cubit) => cubit.increment(),
       expect: [CounterState(counterValue: 1, wasIncremented: true)],
