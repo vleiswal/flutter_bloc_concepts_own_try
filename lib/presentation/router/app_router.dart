@@ -27,7 +27,7 @@ class AppRouter {
             builder: (_) => BlocProvider.value(
                   value: _counterCubit,
                   child: SecondScreen(
-                    title: 'Home Screen',
+                    title: 'Second Screen',
                     color: Colors.redAccent,
                   ),
                 ));
@@ -38,7 +38,7 @@ class AppRouter {
             builder: (_) => BlocProvider.value(
                   value: _counterCubit,
                   child: ThirdScreen(
-                    title: 'Home Screen',
+                    title: 'Third Screen',
                     color: Colors.greenAccent,
                   ),
                 ));
