@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_concepts_own_try/logic/cubit/counter_cubit.dart';
-import 'package:flutter_bloc_concepts_own_try/presentation/screens/second_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key, this.title, this.color}) : super(key: key);
@@ -87,7 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 24,
             ),
             MaterialButton(
-              color: widget.color,
+              color: Colors.redAccent,
               child: Text('Go to 2nd Screen'),
               onPressed: () {
                 Navigator.of(context).pushNamed('/second');
@@ -97,7 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 24,
             ),
             MaterialButton(
-              color: widget.color,
+              color: Colors.greenAccent,
               child: Text('Go to 3rd Screen'),
               onPressed: () {
                 Navigator.of(context).pushNamed('/third');

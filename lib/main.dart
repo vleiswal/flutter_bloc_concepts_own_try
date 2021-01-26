@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_concepts_own_try/logic/cubit/counter_cubit.dart';
+import 'package:flutter_bloc_concepts_own_try/presentation/router/app_router.dart';
 import 'package:flutter_bloc_concepts_own_try/presentation/screens/home_screen.dart';
 import 'package:flutter_bloc_concepts_own_try/presentation/screens/second_screen.dart';
 import 'package:flutter_bloc_concepts_own_try/presentation/screens/third_screen.dart';
@@ -20,47 +21,21 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final CounterCubit _counterCubit = CounterCubit();
-
+  final AppRouter _appRouter = AppRouter();
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<CounterCubit>(
-      create: (context) => CounterCubit(),
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        routes: {
-          '/': (context) => BlocProvider.value(
-                value: _counterCubit,
-                child: HomeScreen(
-                  title: 'HomeScreen',
-                  color: Colors.blueAccent,
-                ),
-              ),
-          '/second': (context) => BlocProvider.value(
-                value: _counterCubit,
-                child: SecondScreen(
-                  title: 'SecondScreen',
-                  color: Colors.redAccent,
-                ),
-              ),
-          '/third': (context) => BlocProvider.value(
-                value: _counterCubit,
-                child: ThirdScreen(
-                  title: 'ThirdScreen',
-                  color: Colors.greenAccent,
-                ),
-              ),
-        },
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
+      onGenerateRoute: _appRouter.onGeneratedRoute,
     );
   }
 
   @override
   void dispose() {
-    _counterCubit.close();
+    _appRouter.dispose();
     super.dispose();
   }
 }

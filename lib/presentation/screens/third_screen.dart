@@ -18,6 +18,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        backgroundColor: widget.color,
       ),
       body: Center(
         child: Column(
@@ -70,6 +71,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
                   },
                   heroTag: 'dec',
                   tooltip: 'Decrement',
+                  backgroundColor: widget.color,
                   child: Icon(Icons.remove),
                 ),
                 FloatingActionButton(
@@ -78,6 +80,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
                   },
                   heroTag: 'inc',
                   tooltip: 'Increment',
+                  backgroundColor: widget.color,
                   child: Icon(Icons.add),
                 ),
               ],
