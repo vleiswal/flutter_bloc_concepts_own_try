@@ -6,7 +6,7 @@ void main() {
   group('CounterCubit', () {
     CounterCubit counterCubit;
     setUp(() {
-      counterCubit = CounterCubit();
+      //counterCubit = CounterCubit();
     });
 
     tearDown(() {

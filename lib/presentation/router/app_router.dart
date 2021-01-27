@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_concepts_own_try/presentation/screens/home_screen.dart';
 import 'package:flutter_bloc_concepts_own_try/presentation/screens/second_screen.dart';
 import 'package:flutter_bloc_concepts_own_try/presentation/screens/third_screen.dart';
-import 'package:flutter_bloc_concepts_own_try/logic/cubit/counter_cubit.dart';
 
 class AppRouter {
   Route onGeneratedRoute(RouteSettings routeSettings) {
